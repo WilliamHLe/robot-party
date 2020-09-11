@@ -2,20 +2,35 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    padding: 30px 60px 60px 30px;
 }
 .carousel-slides {
-    display: flex;
-    transition: all 0.5s ease;
-}
-.carousel-buttons {
-    display: inline-block;
+    transition: all 1s ease;
+    /*sliter med å få transition siden komponenten rerenderer?*/
 }
 .slide-active {
     display: block;
-    flex: 0 0 auto;
-    transition: all 0.5s ease;
     width: 100%;
 }
 .slide-hidden {
     display: none;
+    width: 100%;
 }
+.carousel-buttons {
+    display: inline-block;
+    width: 90%;
+}
+.carousel-button {
+    background-color: #0D1A2B;
+    color: white;
+    cursor: pointer;
+    padding: 17px 35px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+}
+.carousel-button:hover {
+    background-color: #1c375c;
+}
+

@@ -5,5 +5,7 @@
     align-items: center;
     background: #0D1A2B;
     color: white;
-    height: 10vh;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: large;
+    height: 20vh;
 }
