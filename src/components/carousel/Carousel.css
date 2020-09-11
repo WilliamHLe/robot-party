@@ -1,0 +1,21 @@
+.carousel-wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.carousel-slides {
+    display: flex;
+    transition: all 0.5s ease;
+}
+.carousel-buttons {
+    display: inline-block;
+}
+.slide-active {
+    display: block;
+    flex: 0 0 auto;
+    transition: all 0.5s ease;
+    width: 100%;
+}
+.slide-hidden {
+    display: none;
+}
