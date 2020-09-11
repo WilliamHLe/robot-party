@@ -1,6 +1,14 @@
 import React, {useState} from "react";
 import "./Carousel.css";
 
+/* Based on: https://medium.com/octopus-wealth/creating-a-carousel-in-react-e45918738212 */
+
+/*Forenklet kode fra link over (blant annet tatt bort bruk av Styled Components). Mulig jeg burde bruke litt mer
+* typing her, har kun med typing i IProps*/
+
+/*Denne koden ga et godt utgangspunkt ettersom den lot slides være egne komponenter, som jeg ønsket for å gjøre
+* komponenten mer generell.*/
+
 interface IProps {
     children: JSX.Element[];
 }
