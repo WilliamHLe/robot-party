@@ -7,7 +7,8 @@ import Head from "./components/Head";
 import Carousel from "./components/carousel/Carousel";
 import SlideOne from './components/carousel/Testslide1';
 import SlideTwo from "./components/carousel/Testslide2";
-import SlideThree from "./components/carousel/Testslide3";
+import SlideThree from "./components/carousel/Testslide3"
+import Canvas from "./components/carousel/Canvas";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 
           <div>
               <Carousel>
-                  <SlideOne/>
+                  <Canvas />
                   <SlideTwo/>
                   <SlideThree/>
               </Carousel>
