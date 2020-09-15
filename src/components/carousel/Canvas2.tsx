@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 
-const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+const Canvas2 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
     const canvasRef = useRef(null)
 
@@ -8,36 +8,37 @@ const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
     let forward = true;
     let speed = 60;
     let utstilling = "bop";
-    let dance = [
+    let bop: any = [
         //Head
-        { x: 320, y: 175, w: 105, h: 125, rotate: 0 },
+        { x1: 375, x2: 450, x3: 300, y1: 275, y2: 150 },
         //Left arm
-        { x: 365, y: 290, w: 50, h: 100, rotate: -10 },
+        { x: 450, y: 280, w: 50, h: 100, rotate: 90 },
         {
-            x: 385,
-            y: 355,
+            x: 475,
+            y: 275,
             w: 100,
             h: 50,
-            rotate: 10
+            rotate: -80
         },
-        //Left foot
-        { x: 400, y: 400, w: 60, h: 125, rotate: -40 },
-        { x: 425, y: 490, w: 50, h: 100, rotate: 10 },
-        //Body
-        { x: 375, y: 325, w: 0, h: 0, rotate: 0 },
-        { x: 375, y: 375, w: 0, h: 0, rotate: 0 },
         //Right arm
-        { x: 345, y: 300, w: 50, h: 100, rotate: -10 },
+        { x: 255, y: 280, w: 50, h: 100, rotate: 90 },
         {
-            x: 365,
-            y: 365,
+            x: 175,
+            y: 275,
             w: 100,
             h: 50,
-            rotate: 10
+            rotate: 80
         },
         //Right foot
-        { x: 325, y: 415, w: 60, h: 125, rotate: 5 },
-        { x: 315, y: 515, w: 50, h: 100, rotate: 20 }
+        { x: 290, y: 400, w: 60, h: 125, rotate: 40 },
+        { x: 265, y: 490, w: 50, h: 100, rotate: -10 },
+        //Left foot
+        { x: 410, y: 400, w: 60, h: 125, rotate: -40 },
+        { x: 435, y: 490, w: 50, h: 100, rotate: 10 },
+        //Body
+        { x: 375, y: 325, w: 0, h: 0, rotate: 0 },
+        { x: 375, y: 375, w: 0, h: 0, rotate: 0 }
+
     ];
 
     const drawFloor = (ctx:any) => {
@@ -83,35 +84,41 @@ const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
 
         const animate = () => {
             context.clearRect(0, 0, 800, 800);
-            drawFloor(context)
-            drawDancer(dance, context);
+            drawFloor(context);
+            if(utstilling == "dance") {
+
+            } else if(utstilling == "blink"){
+
+            } else if(utstilling == "bop") {
+                drawDancer(bop, context);
+            }
             if(forward){
-                dance[2].x += 40/speed;
-                dance[2].y -= 95/speed;
-                dance[2].rotate -= 90/speed;
-                dance[1].x += 35/speed;
-                dance[1].y -= 15/speed;
-                dance[1].rotate -= 75/speed;
-                dance[8].x += 50/speed;
-                dance[8].y -= 60/speed;
-                dance[8].rotate -= 10/speed;
-                dance[7].x += 20/speed;
-                dance[7].y -= 25/speed;
-                dance[7].rotate -= 70/speed;
+                bop[0].y1 += 50/speed;
+                bop[0].y2 += 50/speed;
+                bop[1].y += 50/speed;
+                bop[2].y += 50/speed;
+                bop[3].y += 50/speed;
+                bop[4].y += 50/speed;
+                bop[9].y += 50/speed;
+                bop[10].y += 50/speed;
+                bop[6].rotate -= 20/speed;
+                bop[8].rotate += 20/speed;
+                bop[5].rotate += 20/speed;
+                bop[7].rotate -= 20/speed;
                 j++;
             } else {
-                dance[2].x -= 40/speed;
-                dance[2].y += 95/speed;
-                dance[2].rotate += 90/speed;
-                dance[1].x -= 35/speed;
-                dance[1].y += 15/speed;
-                dance[1].rotate += 75/speed;
-                dance[8].x -= 50/speed;
-                dance[8].y += 60/speed;
-                dance[8].rotate += 10/speed;
-                dance[7].x -= 20/speed;
-                dance[7].y += 25/speed;
-                dance[7].rotate += 70/speed;
+                bop[0].y1 -= 50/speed;
+                bop[0].y2 -= 50/speed;
+                bop[1].y -= 50/speed;
+                bop[2].y -= 50/speed;
+                bop[3].y -= 50/speed;
+                bop[4].y -= 50/speed;
+                bop[9].y -= 50/speed;
+                bop[10].y -= 50/speed;
+                bop[6].rotate += 20/speed;
+                bop[8].rotate -= 20/speed;
+                bop[5].rotate -= 20/speed;
+                bop[7].rotate += 20/speed;
                 j--;
             }
             if(j > speed){
@@ -127,4 +134,5 @@ const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
     return <canvas ref={canvasRef} width={800} height={800} {...props}/>
 }
 
-export default Canvas1
+export default Canvas2
+
