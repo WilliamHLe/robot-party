@@ -1,4 +1,5 @@
 import React from "react";
+import Canvas1 from "./Canvas1";
 
 /*Her endrer vi hver slide til å inneholde bilde/tekst/lyd vi ønsker, dette er en helt egen komponent*/
 /*Har lagt til header, paragraph og et bilde som placeholder inntil videre*/
@@ -11,7 +12,7 @@ const SlideOne = () => (
         <p>
             Første bilde av en dansende robot.
         </p>
-        <img src="https://via.placeholder.com/400/008080/ffffff" alt="Bilde1"/>
+        <Canvas1 />
     </div>
 );
 
