@@ -10,6 +10,7 @@ import SlideTwo from "./components/carousel/Testslide2";
 import SlideThree from "./components/carousel/Testslide3"
 import Canvas1 from "./components/carousel/Canvas1";
 import Canvas2 from "./components/carousel/Canvas2";
+import Canvas3 from "./components/carousel/Canvas3";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
               <Carousel>
                   <Canvas1 />
                   <Canvas2 />
-                  <SlideThree/>
+                  <Canvas3 />
               </Carousel>
           </div>
 
