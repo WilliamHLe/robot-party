@@ -1,6 +1,6 @@
 import React from "react";
-import Canvas2 from "./Canvas2";
-import Canvas1 from "./Canvas1";
+import Canvas2 from "../canvas/Canvas2";
+import Canvas1 from "../canvas/Canvas1";
 import DisplayPoetry from "../DisplayPoetry";
 /*Her endrer vi hver slide til å inneholde bilde/tekst/lyd vi ønsker, dette er en helt egen komponent*/
 /*Har lagt til header, paragraph og et bilde som placeholder inntil videre*/

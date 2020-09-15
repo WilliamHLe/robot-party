@@ -5,9 +5,9 @@ import Footer from "./components/Footer";
 import Head from "./components/Head";
 
 import Carousel from "./components/carousel/Carousel";
-import SlideOne from './components/carousel/Testslide1';
-import SlideTwo from "./components/carousel/Testslide2";
-import SlideThree from "./components/carousel/Testslide3"
+import SlideOne from './components/carousel/SlideOne';
+import SlideTwo from "./components/carousel/SlideTwo";
+import SlideThree from "./components/carousel/SlideThree"
 import Radios from "./components/Radios";
 
 function App() {
@@ -23,12 +23,13 @@ function App() {
       <div>
           <Head />
           <div>
+              <Radios />
               <Carousel>
                   <SlideOne />
                   <SlideTwo />
                   <SlideThree />
               </Carousel>
-              <Radios />
+
           </div>
           <Footer />
       </div>
