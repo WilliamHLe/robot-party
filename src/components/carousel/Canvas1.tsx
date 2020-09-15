@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 
-const Canvas = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
     const canvasRef = useRef(null)
 
@@ -78,14 +78,12 @@ const Canvas = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanva
     }
 
     useEffect(() => {
-        const canvas = canvasRef.current
-        // @ts-ignore
+        const canvas:any = canvasRef.current
         const context = canvas.getContext('2d')
-        drawFloor(context)
 
         const animate = () => {
             context.clearRect(0, 0, 800, 800);
-            //drawFloor();
+            drawFloor(context)
             drawDancer(dance, context);
             if(forward){
                 dance[2].x += 40/speed;
@@ -129,4 +127,4 @@ const Canvas = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanva
     return <canvas ref={canvasRef} width={800} height={800} {...props}/>
 }
 
-export default Canvas
+export default Canvas1
