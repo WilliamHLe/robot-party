@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import './DisplayPoetry.css';
 
 // Fetch data from poetry API
-const DisplayPoetry = (props: { url: any; }) => {
+const DisplayPoetry = (props: { url: string; }) => {
     const url = props.url
     const [contents, setContents] = useState([{ title: "", author: "", lines: [""] }]);
 
