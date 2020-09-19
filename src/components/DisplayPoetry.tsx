@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import './DisplayPoetry.css';
 
 // Fetch data from poetry API
-const DisplayPoetry = () => {
-    const url = "https://poetrydb.org/author,title/Emily%20Dickinson;We%20should%20not%20mind%20so%20small%20a%20flower";
+const DisplayPoetry = (props: { url: string; }) => {
+    const url = props.url
     const [contents, setContents] = useState([{ title: "", author: "", lines: [""] }]);
 
     useEffect(() => {
