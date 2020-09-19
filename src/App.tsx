@@ -5,14 +5,25 @@ import Footer from "./components/Footer";
 import Head from "./components/Head";
 
 import Carousel from "./components/carousel/Carousel";
-import SlideOne from './components/carousel/Testslide1';
+import SlideOne from "./components/carousel/Testslide1";
 import SlideTwo from "./components/carousel/Testslide2";
 import SlideThree from "./components/carousel/Testslide3";
 
+import MoodRadio from "./components/radio/SpeedRadio";
+import ColorRadio from "./components/radio/ColorRadio";
+
+//import { getJson, setJson } from "./components/storage/jsonStorage"
+
 function App() {
-  return (
+
+    return (
       <div>
-          <Head />
+          <Head/>
+
+          <div className="radios">
+              <MoodRadio/>
+              <ColorRadio/>
+          </div>
 
           <div>
               <Carousel>
