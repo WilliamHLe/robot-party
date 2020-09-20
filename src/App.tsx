@@ -26,17 +26,15 @@ function App() {
     }
     */
 
-    let name = getJson("storedName");
 
     return (
       <div>
           <Head/>
 
-          <PresentName />
-
-          <div className="radios">
-              <Radio/>
-          </div>
+              <PresentName />
+              <div>
+                  <Radio/>
+              </div>
 
           {/*
           <div>

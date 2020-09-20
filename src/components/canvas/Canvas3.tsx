@@ -1,18 +1,16 @@
-import React, { useRef, useEffect } from 'react'
+import React, {useRef, useEffect, useContext} from 'react'
+import RadioContext from "../context/RadioContext";
 
-interface CanvasProps {
-    speedValue: number;
-    colorValue: string;
-}
 
-const Canvas3 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+const Canvas3 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
     const canvasRef = useRef(null)
+    const {speed, color} = useContext(RadioContext);
 
     let j = 1;
     let forward = true;
-    let speed = speedValue;
-    let utstilling = "bop";
+    //let utstilling = "bop";
+
     let circles: any = [
         {x:375,y:275,r:150,sA:0.75*Math.PI,eA:0.25*Math.PI,color:"rgb(255,0,0)"},
         {x:375,y:450,r:200,sA:0,eA:2*Math.PI,color:"rgb(0,255,0)"},
