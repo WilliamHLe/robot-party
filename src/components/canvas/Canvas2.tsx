@@ -1,12 +1,17 @@
 import React, { useRef, useEffect } from 'react'
 
-const Canvas2 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+interface CanvasProps {
+    speedValue: number;
+    colorValue: string;
+}
+
+const Canvas2 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
     const canvasRef = useRef(null)
 
     let j = 1;
     let forward = true;
-    let speed = 60;
+    let speed = speedValue;
     let utstilling = "bop";
     let bop: any = [
         //Head

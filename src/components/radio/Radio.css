@@ -1,0 +1,12 @@
+.radio-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.radio-element {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 30px;
+}

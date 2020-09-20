@@ -1,13 +1,20 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect} from 'react'
 
-const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+interface CanvasProps {
+    speedValue: number;
+    colorValue: string;
+}
+
+const Canvas1 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
     const canvasRef = useRef(null)
 
     let j = 1;
     let forward = true;
-    let speed = 60;
-    let utstilling = "bop";
+    //speedValue oppdateres til riktig verdi, men vises ikke i bildet?
+    //problem med render?
+    let speed = speedValue;
+    //let utstilling = "bop";
     let dance = [
         //Head
         { x: 320, y: 175, w: 105, h: 125, rotate: 0 },
@@ -55,7 +62,7 @@ const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
             ctx.save();
             ctx.beginPath();
             ctx.fillStyle = "yellow";
-            if (r.w == 0) {
+            if (r.w === 0) {
                 ctx.arc(r.x, r.y, 55, 0, 2 * Math.PI);
             } else if (typeof r.x1 !== "undefined") {
                 ctx.beginPath();

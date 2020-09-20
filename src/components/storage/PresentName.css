@@ -1,0 +1,30 @@
+.introductionWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.toggleButton {
+    box-shadow: 0 4px 8px 0 #dcdae3;
+    background-color: #0D1A2B;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 30%;
+    text-align: left;
+    border: none;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.toggleButton:hover {
+    background-color: #1c375c;
+}
+
+
+.plusMinus {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
