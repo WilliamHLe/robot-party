@@ -131,7 +131,7 @@ const Canvas1 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttr
         requestAnimationFrame(animate);
     }, [])
 
-    return <canvas ref={canvasRef} width={800} height={800} {...props}/>
+    return <canvas ref={canvasRef} width={800} height={800} style={{ maxWidth: 600 }} {...props}/>
 }
 
 export default Canvas1
