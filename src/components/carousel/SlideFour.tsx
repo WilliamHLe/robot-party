@@ -6,7 +6,7 @@ import DisplayPoetry from "../DisplayPoetry";
 /*Har lagt til header, paragraph og et bilde som placeholder inntil videre*/
 
 const SlideFour = () => {
-    const url = "https://poetrydb.org/author,title/Emily%20Dickinson;Success%20is%20counted%20sweetest"
+    const url = "https://poetrydb.org/author,title/Emily%20Dickinson;Nature%20can%20do%20no%20more"
     return (
         <div>
             <h1>
