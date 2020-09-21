@@ -13,7 +13,7 @@ const SlideThree = () => {
                 Blinkende robot
             </h1>
             <p>
-                Første bilde av en dansende robot.
+                Tredje bilde av en blinkende robot.
             </p>
             <Canvas3 />
             <DisplayPoetry url={url} />

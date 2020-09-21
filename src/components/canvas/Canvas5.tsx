@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 
-const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+const Canvas5 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
     const canvasRef = useRef(null)
 
@@ -8,36 +8,35 @@ const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
     let forward = true;
     let speed = 30;
     let utstilling = "bop";
-    let robot = [
+    let disco = [
         //Head
-        { x: 280, y: 155, w: 105, h: 125, rotate: -10 },
+        { x: 320, y: 175, w: 105, h: 125, rotate: 0 },
         //Rigth foot
-        { x: 310, y: 400, w: 50, h: 125, rotate: 10 },
-        { x: 295, y: 495, w: 50, h: 100, rotate: 10 },
+        { x: 290, y: 400, w: 50, h: 125, rotate: 30 },
+        { x: 270, y: 495, w: 50, h: 100, rotate: -10 },
         //Left foot
-        { x: 390, y: 400, w: 50, h: 125, rotate: -10 },
-        { x: 405, y: 495, w: 50, h: 100, rotate: -10 },
+        { x: 410, y: 400, w: 50, h: 125, rotate: -30 },
+        { x: 430, y: 495, w: 50, h: 100, rotate: 10 },
         //Body
-        { x: 360, y: 325, w: 0, h: 0, rotate: 0 },
+        { x: 375, y: 325, w: 0, h: 0, rotate: 0 },
         { x: 375, y: 375, w: 0, h: 0, rotate: 0 },
         //Left arm
-        { x: 400, y: 280, w: 50, h: 100, rotate: 150 },
+        { x: 430, y: 280, w: 50, h: 100, rotate: 135 },
         {
             x: 405,
-            y: 390,
+            y: 360,
             w: 100,
             h: 50,
-            rotate: -90
+            rotate: -45
         },
         //Rigth arm
-        { x: 245, y: 260, w: 50, h: 100, rotate: 90 },
+        { x: 275, y: 220, w: 50, h: 100, rotate: 160 },
         {
             x: 230,
-            y: 310,
+            y: 160,
             w: 100,
             h: 50,
-            rotate: 240,
-            name: "arm"
+            rotate: 85
         },
     ];
 
@@ -68,7 +67,7 @@ const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
             } else if (r.name == "arm") {
                 ctx.translate(r.x, r.y);
                 ctx.rotate((r.rotate * Math.PI) / 180);
-                ctx.rect(-r.w,-r.h/2,r.w,r.h);
+                ctx.rect(-r.w, -r.h / 2, r.w, r.h);
 
             } else {
                 //Kode som gjør av rektangler roterer rundt midtpunket sitt. Koden er funnet her: https://stackoverflow.com/questions/17125632/html5-canvas-rotate-object-without-moving-coordinates/17126036
@@ -79,7 +78,7 @@ const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
             ctx.fill();
             ctx.stroke();
             ctx.restore();
-        });
+        })
     }
 
 
@@ -91,12 +90,22 @@ const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
         const animate = () => {
             context.clearRect(0, 0, 800, 800);
             drawFloor(context);
-            drawDancer(robot, context);
+            drawDancer(disco, context);
             if(forward){
-                robot[10].rotate += 60/speed;
+                disco[9].x += 25/speed;
+                disco[9].y += 80/speed;
+                disco[9].rotate -= 180/speed;
+                disco[10].x += 90/speed;
+                disco[10].y += 240/speed;
+                disco[10].rotate += 150/speed;
                 j++;
             } else {
-                robot[10].rotate -= 60/speed;
+                disco[9].x -= 25/speed;
+                disco[9].y -= 80/speed;
+                disco[9].rotate += 180/speed;
+                disco[10].x -= 90/speed;
+                disco[10].y -= 240/speed;
+                disco[10].rotate -= 150/speed;
                 j--;
             }
             if(j > speed){
@@ -112,4 +121,4 @@ const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
     return <canvas ref={canvasRef} width={800} height={800} {...props}/>
 }
 
-export default Canvas4
+export default Canvas5

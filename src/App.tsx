@@ -8,6 +8,8 @@ import SlideOne from './components/carousel/SlideOne';
 import SlideTwo from "./components/carousel/SlideTwo";
 import SlideThree from "./components/carousel/SlideThree"
 import SlideFour from "./components/carousel/SlideFour"
+import SlideFive from "./components/carousel/SlideFive";
+
 import Radios from "./components/Radios";
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
                   <SlideTwo />
                   <SlideThree />
                   <SlideFour />
+                  <SlideFive />
               </Carousel>
 
           </div>

@@ -1,24 +1,24 @@
 import React from "react";
-import Canvas4 from "../canvas/Canvas4";
+import Canvas5 from "../canvas/Canvas5";
 import DisplayPoetry from "../DisplayPoetry";
 
 /*Her endrer vi hver slide til å inneholde bilde/tekst/lyd vi ønsker, dette er en helt egen komponent*/
 /*Har lagt til header, paragraph og et bilde som placeholder inntil videre*/
 
-const SlideFour = () => {
+const SlideFive = () => {
     const url = "https://poetrydb.org/author,title/Emily%20Dickinson;Success%20is%20counted%20sweetest"
     return (
         <div>
             <h1>
-                80-tallet robot
+                Retro robot dans
             </h1>
             <p>
-                Fjerde bilde av en dansende robot.
+                Femte bilde av en dansende robot.
             </p>
-            <Canvas4 />
+            <Canvas5 />
             <DisplayPoetry url={url} />
         </div>
     )
 }
 
-export default SlideFour;
+export default SlideFive;

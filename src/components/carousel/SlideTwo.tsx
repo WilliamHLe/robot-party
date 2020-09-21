@@ -12,7 +12,7 @@ const SlideTwo = () => {
                 Hoppende robot
             </h1>
             <p>
-                Første bilde av en dansende robot.
+                Andre bilde av en hoppende robot.
             </p>
             <Canvas2 />
             <DisplayPoetry url={url} />
