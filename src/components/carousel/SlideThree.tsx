@@ -1,6 +1,5 @@
 import React from "react";
 import Canvas3 from "../canvas/Canvas3";
-import Canvas1 from "../canvas/Canvas1";
 import DisplayPoetry from "../DisplayPoetry";
 
 /*Her endrer vi hver slide til å inneholde bilde/tekst/lyd vi ønsker, dette er en helt egen komponent*/
