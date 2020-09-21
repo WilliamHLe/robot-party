@@ -5,6 +5,8 @@ import Carousel from "../carousel/Carousel";
 import SlideOne from "../carousel/SlideOne";
 import SlideTwo from "../carousel/SlideTwo";
 import SlideThree from "../carousel/SlideThree";
+import SlideFour from "../carousel/SlideFour";
+import SlideFive from "../carousel/SlideFive";
 
 // To radiokomponenter
 // En for farger (RGB-verdier)
@@ -65,6 +67,8 @@ const Radio: React.FC = () => {
                     <SlideOne speedValue={speed} colorValue={color}/>
                     <SlideTwo speedValue={speed} colorValue={color}/>
                     <SlideThree speedValue={speed} colorValue={color}/>
+                    <SlideFour speedValue={speed} colorValue={color}/>
+                    <SlideFive speedValue={speed} colorValue={color}/>
                 </Carousel>
             </div>
         </div>

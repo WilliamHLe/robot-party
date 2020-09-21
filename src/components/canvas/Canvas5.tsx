@@ -54,6 +54,7 @@ const Canvas5 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
         arr.forEach((r: { w: number; x: number; y: number; x1: any; y1: any; x2: any; y2: any; x3: any; name: string; rotate: number; h: number; }) => {
             ctx.save();
             ctx.beginPath();
+            ctx.fillStyle = "yellow";
             if (r.w == 0) {
                 ctx.arc(r.x, r.y, 55, 0, 2 * Math.PI);
             } else if (typeof r.x1 !== "undefined") {
