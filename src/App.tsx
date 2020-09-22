@@ -1,9 +1,15 @@
 import React, {useEffect, useState} from "react";
 import './App.css';
-//import DisplayPoetry from "./components/DisplayPoetry";
+import DisplayPoetry from "./components/DisplayPoetry";
 import Footer from "./components/Footer";
 import Head from "./components/Head";
 
+import Carousel from "./components/carousel/Carousel";
+import SlideOne from './components/carousel/SlideOne';
+import SlideTwo from "./components/carousel/SlideTwo";
+import SlideThree from "./components/carousel/SlideThree"
+import Radios from "./components/Radios";
+import Music from "./components/Music";
 //import Carousel from "./components/carousel/Carousel";
 //import SlideOne from './components/carousel/SlideOne';
 //import SlideTwo from "./components/carousel/SlideTwo";
@@ -31,6 +37,8 @@ function App() {
 
           {/*
           <div>
+              <Radios />
+              <Music />
               <Carousel>
                   <SlideOne />
                   <SlideTwo />
