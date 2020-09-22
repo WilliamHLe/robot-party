@@ -59,7 +59,7 @@ const Canvas2 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
             ctx.save();
             ctx.beginPath();
             ctx.fillStyle = color;
-            if (r.w == 0) {
+            if (r.w === 0) {
                 ctx.arc(r.x, r.y, 55, 0, 2 * Math.PI);
             } else if (typeof r.x1 !== "undefined") {
                 ctx.beginPath();
@@ -88,11 +88,11 @@ const Canvas2 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
         const animate = () => {
             context.clearRect(0, 0, 800, 800);
             drawFloor(context);
-            if(utstilling == "dance") {
+            if(utstilling === "dance") {
 
-            } else if(utstilling == "blink"){
+            } else if(utstilling === "blink"){
 
-            } else if(utstilling == "bop") {
+            } else if(utstilling === "bop") {
                 drawDancer(bop, context);
             }
             if(forward){
