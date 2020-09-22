@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react'
+import "../container.css"
 
 interface CanvasProps {
     speedValue: number;
@@ -77,7 +78,7 @@ const Canvas3 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttr
         requestAnimationFrame(animate);
     }, [])
 
-    return <canvas ref={canvasRef} width={800} height={800} {...props}/>
+    return <canvas ref={canvasRef} width={800} height={800} className="canvas" {...props}/>
 }
 
 export default Canvas3

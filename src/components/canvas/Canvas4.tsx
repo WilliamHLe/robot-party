@@ -1,6 +1,11 @@
 import React, { useRef, useEffect } from 'react'
+import "../container.css"
 
-const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+interface CanvasProps {
+    speedValue: number;
+    colorValue: string;
+}
+const Canvas4 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
     const canvasRef = useRef(null)
 
@@ -110,7 +115,7 @@ const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
         requestAnimationFrame(animate);
     }, [])
 
-    return <canvas ref={canvasRef} width={800} height={800} {...props}/>
+    return <canvas ref={canvasRef} width={800} height={800} className="canvas" {...props}/>
 }
 
 export default Canvas4
