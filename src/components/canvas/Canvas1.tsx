@@ -16,8 +16,6 @@ const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
 
     const canvasRef = useRef(null)
     const {speed, color} = useContext(RadioContext);
-    //let speed = 60;
-    //let color = "#00FF00"
 
     let j = 1;
     let forward = true;

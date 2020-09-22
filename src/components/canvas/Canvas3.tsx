@@ -75,7 +75,7 @@ const Canvas3 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
             requestAnimationFrame(animate);
         }
         requestAnimationFrame(animate);
-    }, [])
+    }, [speed, color])
 
     return <canvas ref={canvasRef} width={800} height={800} {...props}/>
 }
