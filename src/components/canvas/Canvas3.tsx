@@ -12,10 +12,10 @@ const Canvas3 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
     //let utstilling = "bop";
 
     let circles: any = [
-        {x:375,y:275,r:150,sA:0.75*Math.PI,eA:0.25*Math.PI,color:"rgb(255,0,0)"},
-        {x:375,y:450,r:200,sA:0,eA:2*Math.PI,color:"rgb(0,255,0)"},
-        {x:450,y:475,r:75,sA:0,eA:2*Math.PI,color:"rgb(0,0,255)"},
-        {x:375,y:75,r:25,sA:0,eA:2*Math.PI,color:"rgb(0,0,255)"}
+        {x:375,y:275,r:150,sA:0.75*Math.PI,eA:0.25*Math.PI,color:color},
+        {x:375,y:450,r:200,sA:0,eA:2*Math.PI,color:color},
+        {x:450,y:475,r:75,sA:0,eA:2*Math.PI,color:color},
+        {x:375,y:75,r:25,sA:0,eA:2*Math.PI,color:color}
     ]
 
     const drawFloor = (ctx:any) => {
@@ -54,11 +54,27 @@ const Canvas3 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
             drawCircles(context);
             if(j > speed || j < 1) {
                 circles.forEach((c: any) => {
-                    // USIKKER PÅ HVORDAN VI SKAL LEGGE TIL COLOR HER
-                    // KLARE Å LAGE RGB OMRÅDER FOR FARGETEMA RØD, BLÅ, GRØNN?
-                    let r = Math.floor(Math.random() * 255);
-                    let g = Math.floor(Math.random() * 255);
-                    let b = Math.floor(Math.random() * 255);
+
+                    let r:number = 0;
+                    let g:number = 0;
+                    let b:number = 0;
+
+                    if (color === "#FF0000") {
+                        r = Math.floor(Math.random() * 255); //only red values
+                        g = 0;
+                        b = 0;
+                    }
+                    else if (color === "#0000FF") {
+                        r = 0;
+                        g = 0;
+                        b = Math.floor(Math.random() * 255); //only blue values
+                    }
+                    else if (color === "#00FF00") {
+                        r = 0;
+                        g = Math.floor(Math.random() * 255); //only green values;
+                        b = 0;
+                    }
+
                     c.color = "rgb("+r+","+g+","+b+")";
                 })
             }
