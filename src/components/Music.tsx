@@ -37,7 +37,14 @@ const Music : React.FC = () => {
 
     const pauseMusic = () => {
         const musicPlayer:any = document.getElementById("musicPlayer");
-        return musicPlayer.paused ? musicPlayer.play() : musicPlayer.pause();
+        const pauseButton:any = document.getElementById("pause");
+        if(musicPlayer.paused) {
+            pauseButton.textContent = "\u23F8\uFE0E";
+            musicPlayer.play();
+        } else {
+            pauseButton.textContent = "\u23F5\uFE0E";
+            musicPlayer.pause();
+        }
     }
 
     return (
@@ -50,11 +57,10 @@ const Music : React.FC = () => {
                 <audio id="musicPlayer" onPlay={() => setVolume()} autoPlay>
                     <source src={selected} type="audio/mpeg"/>
                 </audio>
-                &#128264;<input id="volumeSlider" type="range" min="0" max="100" defaultValue="50" className="slider" onChange={() => setVolume()}/>&#128266;<span onClick={pauseMusic}>&#9208;</span>
+                <span id="pause" onClick={pauseMusic}>&#x23F8;&#xFE0E;</span><span className="lowVolume"> </span><input id="volumeSlider" type="range" min="0" max="100" defaultValue="50" className="slider" onChange={() => setVolume()}/><span className="maxVolume"> </span>
             </div>
         </div>
     )
-
 }
 
 export default Music;
