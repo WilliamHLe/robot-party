@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
 import './App.css';
+//import DisplayPoetry from "./components/DisplayPoetry";
 import Footer from "./components/Footer";
 import Head from "./components/Head";
+
 //import Carousel from "./components/carousel/Carousel";
 //import SlideOne from './components/carousel/SlideOne';
 //import SlideTwo from "./components/carousel/SlideTwo";

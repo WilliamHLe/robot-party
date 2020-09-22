@@ -17,7 +17,7 @@ const DisplayPoetry = (props: { url: string; }) => {
 
     return (
         <div className="poetry-container">
-            <h2>{contents[0].title} av {contents[0].author}</h2>
+            <h3>{contents[0].title} av {contents[0].author}</h3>
             <div>{contents[0].lines.map((line) => <p>{line}</p>)}</div>
         </div>
     );

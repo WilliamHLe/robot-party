@@ -1,3 +1,4 @@
+import "../container.css"
 import React, {useRef, useEffect, useContext} from 'react'
 import RadioContext from "../context/RadioContext";
 
@@ -137,7 +138,7 @@ const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
         requestAnimationFrame(animate);
     }, [speed, color])
 
-    return <canvas ref={canvasRef} width={800} height={800} {...props}/>
+    return <canvas ref={canvasRef} width={800} height={800} className="canvas"  {...props}/>
 }
 
 export default Canvas1
