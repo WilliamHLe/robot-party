@@ -1,20 +1,26 @@
-import React, { useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useContext} from 'react'
+import RadioContext from "../context/RadioContext";
 
+// GAMMEL METODE MED PROPS //
+/*
 interface CanvasProps {
     speedValue: number;
     colorValue: string;
 }
+*/
 
-const Canvas1 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+//const Canvas1 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+/////////////////////////////
+
+const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
     const canvasRef = useRef(null)
+    const {speed, color} = useContext(RadioContext);
 
     let j = 1;
     let forward = true;
-    //speedValue oppdateres til riktig verdi, men vises ikke i bildet?
-    //problem med render?
-    let speed = speedValue;
     //let utstilling = "bop";
+
     let dance = [
         //Head
         { x: 320, y: 175, w: 105, h: 125, rotate: 0 },
@@ -61,7 +67,7 @@ const Canvas1 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttr
         arr.forEach((r: { w: number; x: number; y: number; x1: any; y1: any; x2: any; y2: any; x3: any; h: number; rotate: number; }) => {
             ctx.save();
             ctx.beginPath();
-            ctx.fillStyle = "yellow";
+            ctx.fillStyle = color;
             if (r.w === 0) {
                 ctx.arc(r.x, r.y, 55, 0, 2 * Math.PI);
             } else if (typeof r.x1 !== "undefined") {
@@ -129,7 +135,7 @@ const Canvas1 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttr
             requestAnimationFrame(animate);
         }
         requestAnimationFrame(animate);
-    }, [])
+    }, [speed, color])
 
     return <canvas ref={canvasRef} width={800} height={800} {...props}/>
 }

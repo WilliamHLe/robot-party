@@ -1,18 +1,16 @@
-import React, { useRef, useEffect } from 'react'
+import React, {useRef, useEffect, useContext} from 'react'
+import RadioContext from "../context/RadioContext";
 
-interface CanvasProps {
-    speedValue: number;
-    colorValue: string;
-}
 
-const Canvas2 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
+const Canvas2 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
     const canvasRef = useRef(null)
+    const {speed, color} = useContext(RadioContext);
 
     let j = 1;
     let forward = true;
-    let speed = speedValue;
     let utstilling = "bop";
+
     let bop: any = [
         //Head
         { x1: 375, x2: 450, x3: 300, y1: 275, y2: 150 },
@@ -60,7 +58,7 @@ const Canvas2 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttr
         arr.forEach((r: { w: number; x: number; y: number; x1: any; y1: any; x2: any; y2: any; x3: any; h: number; rotate: number; }) => {
             ctx.save();
             ctx.beginPath();
-            ctx.fillStyle = "yellow";
+            ctx.fillStyle = color;
             if (r.w == 0) {
                 ctx.arc(r.x, r.y, 55, 0, 2 * Math.PI);
             } else if (typeof r.x1 !== "undefined") {
@@ -134,7 +132,7 @@ const Canvas2 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttr
             requestAnimationFrame(animate);
         }
         requestAnimationFrame(animate);
-    }, [])
+    }, [speed, color])
 
     return <canvas ref={canvasRef} width={800} height={800} {...props}/>
 }
