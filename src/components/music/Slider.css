@@ -27,3 +27,16 @@
     background: #4CAF50;
     cursor: pointer;
 }
+
+span {
+    font-family: "Segoe UI Symbol";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+}
+span.lowVolume::before {
+    content: "\1F508\FE0E";
+}
+span.maxVolume::before {
+    content: "\1F50A\FE0E";
+}
