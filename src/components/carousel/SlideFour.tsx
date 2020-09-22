@@ -5,12 +5,7 @@ import DisplayPoetry from "../DisplayPoetry";
 /*Her endrer vi hver slide til å inneholde bilde/tekst/lyd vi ønsker, dette er en helt egen komponent*/
 /*Har lagt til header, paragraph og et bilde som placeholder inntil videre*/
 
-interface SlideProps {
-    speedValue: number;
-    colorValue: string;
-}
-
-const SlideFour = ({speedValue, colorValue}: SlideProps) => {
+const SlideFour = () => {
     const url = "https://poetrydb.org/author,title/Emily%20Dickinson;Nature%20can%20do%20no%20more"
     return (
         <div>
