@@ -9,6 +9,7 @@ import SlideOne from './components/carousel/SlideOne';
 import SlideTwo from "./components/carousel/SlideTwo";
 import SlideThree from "./components/carousel/SlideThree"
 import Radios from "./components/Radios";
+import Music from "./components/Music";
 
 function App() {
     const [activeMoodCategory, setActiveMoodCategory] = useState("fast");
@@ -24,6 +25,7 @@ function App() {
           <Head />
           <div>
               <Radios />
+              <Music />
               <Carousel>
                   <SlideOne />
                   <SlideTwo />
