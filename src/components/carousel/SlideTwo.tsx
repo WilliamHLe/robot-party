@@ -2,6 +2,7 @@ import React from "react";
 import Canvas2 from "../canvas/Canvas2";
 import "../container.css"
 import DisplayPoetry from "../DisplayPoetry";
+import Music from "../Music";
 /*Her endrer vi hver slide til å inneholde bilde/tekst/lyd vi ønsker, dette er en helt egen komponent*/
 /*Har lagt til header, paragraph og et bilde som placeholder inntil videre*/
 
@@ -27,9 +28,7 @@ const SlideTwo = ({speedValue, colorValue}: SlideProps) => {
                 <DisplayPoetry url={url} />
             </div>
             <div className="grid-audio">
-                <audio controls>
-                    <source src="horse.ogg" type="audio/ogg"></source>
-                </audio>
+                <Music />
             </div>
 
         </div>
