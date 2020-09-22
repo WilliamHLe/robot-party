@@ -5,6 +5,8 @@ import Carousel from "../carousel/Carousel";
 import SlideOne from "../carousel/SlideOne";
 import SlideTwo from "../carousel/SlideTwo";
 import SlideThree from "../carousel/SlideThree";
+import SlideFour from "../carousel/SlideFour";
+import SlideFive from "../carousel/SlideFive";
 import RadioContext from "../context/RadioContext";
 
 // To radiokomponenter
@@ -72,6 +74,8 @@ const Radio: React.FC = () => {
                         <SlideOne/>
                         <SlideTwo/>
                         <SlideThree/>
+                        <SlideFour/>
+                        <SlideFive/>
                     </Carousel>
                 </div>
             </RadioContext.Provider>
