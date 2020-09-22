@@ -35,6 +35,11 @@ const Music : React.FC = () => {
         musicPlayer.play();
     }
 
+    const pauseMusic = () => {
+        const musicPlayer:any = document.getElementById("musicPlayer");
+        return musicPlayer.paused ? musicPlayer.play() : musicPlayer.pause();
+    }
+
     return (
         <div className="radio-wrapper">
             <div>
@@ -45,7 +50,7 @@ const Music : React.FC = () => {
                 <audio id="musicPlayer" onPlay={() => setVolume()} autoPlay>
                     <source src={selected} type="audio/mpeg"/>
                 </audio>
-                &#128264;<input id="volumeSlider" type="range" min="0" max="100" defaultValue="50" className="slider" onChange={() => setVolume()}/>&#128266;
+                &#128264;<input id="volumeSlider" type="range" min="0" max="100" defaultValue="50" className="slider" onChange={() => setVolume()}/>&#128266;<span onClick={pauseMusic}>&#9208;</span>
             </div>
         </div>
     )
