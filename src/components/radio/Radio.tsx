@@ -56,7 +56,7 @@ const Radio: React.FC = () => {
                         </label>
                         <label>
                             <input type="radio" value="#00FF00" name="Grønt" checked={color === "#00FF00"} onChange={() => setColor("#00FF00")}/>
-                            Gult
+                            Grønt
                         </label>
                     </div>
                 </div>

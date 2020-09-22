@@ -54,6 +54,8 @@ const Canvas3 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
             drawCircles(context);
             if(j > speed || j < 1) {
                 circles.forEach((c: any) => {
+                    // USIKKER PÅ HVORDAN VI SKAL LEGGE TIL COLOR HER
+                    // KLARE Å LAGE RGB OMRÅDER FOR FARGETEMA RØD, BLÅ, GRØNN?
                     let r = Math.floor(Math.random() * 255);
                     let g = Math.floor(Math.random() * 255);
                     let b = Math.floor(Math.random() * 255);
