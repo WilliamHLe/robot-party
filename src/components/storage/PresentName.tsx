@@ -13,11 +13,11 @@ const PresentName = () => {
 
     let introduction:string;
 
-    if (personalInfo.name === "") {
-        introduction = "Hei!"
+    if ("name" in personalInfo) {
+        introduction = "Hei, " + personalInfo.name + "!"
     }
     else {
-        introduction = "Hei, " + personalInfo.name + "!"
+        introduction = "Hei!"
     }
 
     const toggleChange = () => {
