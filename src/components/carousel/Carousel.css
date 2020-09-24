@@ -6,7 +6,6 @@
 }
 .carousel-slides {
     transition: all 1s ease;
-    /*sliter med å få transition siden komponenten rerenderer?*/
 }
 .slide-active {
     display: block;

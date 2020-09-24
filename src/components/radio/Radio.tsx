@@ -1,13 +1,14 @@
 import React, {useState} from "react";
 import "./Radio.css";
-
 import Carousel from "../carousel/Carousel";
-import SlideOne from "../carousel/SlideOne";
-import SlideTwo from "../carousel/SlideTwo";
-import SlideThree from "../carousel/SlideThree";
-import SlideFour from "../carousel/SlideFour";
-import SlideFive from "../carousel/SlideFive";
+import Slide from "../carousel/Slide";
 import RadioContext from "../context/RadioContext";
+
+import Canvas1 from "../canvas/Canvas1";
+import Canvas2 from "../canvas/Canvas2";
+import Canvas3 from "../canvas/Canvas3";
+import Canvas4 from "../canvas/Canvas4";
+import Canvas5 from "../canvas/Canvas5";
 
 // To radiokomponenter
 // En for hastighet (tall)
@@ -66,16 +67,11 @@ const Radio: React.FC = () => {
             <RadioContext.Provider value={{speed, color}}>
                 <div>
                     <Carousel>
-                        {/* GAMMEL METODE MED PROPS, TAR VARE PÅ INNTIL VIDERE
-                        <SlideOne speedValue={speed} colorValue={color}/>
-                        <SlideTwo speedValue={speed} colorValue={color}/>
-                        <SlideThree speedValue={speed} colorValue={color}/>
-                        */}
-                        <SlideOne/>
-                        <SlideTwo/>
-                        <SlideThree/>
-                        <SlideFour/>
-                        <SlideFive/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;We%20should%20not%20mind%20so%20small%20a%20flower"} canvas = {<Canvas1/>}/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;Could%20Hope%20inspect%20her%20Basis"} canvas = {<Canvas2/>}/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;Success%20is%20counted%20sweetest"} canvas = {<Canvas3/>}/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;Nature%20can%20do%20no%20more"} canvas = {<Canvas4/>}/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;The%20Butterfly's%20Numidian%20Gown"} canvas = {<Canvas5/>}/>
                     </Carousel>
                 </div>
             </RadioContext.Provider>
