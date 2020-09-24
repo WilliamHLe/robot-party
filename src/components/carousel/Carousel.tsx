@@ -6,6 +6,7 @@ import "./Carousel.css";
 //Lar hver slide være en egen komponent, som gjør det enklere å inkludere ulike canvas i hver slide
 
 interface IProps {
+    //children er en liste med alle barnekomponenter av Carousel, der hvert barn tolkes som en slide
     children: JSX.Element[];
 }
 
@@ -14,7 +15,8 @@ const Carousel = ({ children }: IProps) => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
 
     const activeSlide = children.map((slide, index) => (
-
+        //setter "activeSlide" til å være sliden fra listen som har samme indeks som "currentSlide"
+        //denne sliden er den vi bruker i return
         <div className={currentSlide===index ? 'slide-active' : 'slide-hidden'} key={index}>
             {slide}
         </div>
@@ -28,7 +30,7 @@ const Carousel = ({ children }: IProps) => {
                 </div>
 
                 <div className="carousel-buttons">
-
+                    {/*Knappene setter "currentSlide" lik indeksen til den neste eller den forrige sliden i lista*/}
                     <button className="carousel-button" style={{float: "left"}}
                         onClick={() => {
                             setCurrentSlide((currentSlide - 1 + activeSlide.length) % activeSlide.length);

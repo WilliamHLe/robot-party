@@ -10,17 +10,17 @@ import Canvas3 from "../canvas/Canvas3";
 import Canvas4 from "../canvas/Canvas4";
 import Canvas5 from "../canvas/Canvas5";
 
-// To radiokomponenter
-// En for hastighet (tall)
-// En for farger (RGB-verdier)
+// To radioknapper
+// En for hastighet (lagres som tall)
+// En for farger (hex-verdier, lagres som streng)
 
 
 const Radio: React.FC = () => {
 
-    //60 = SLOW, 35 = NORMAL, 15 = FAST
+    //60 = SAKTE ---- 35 = NORMAL ---- 15 = RASK
     const [speed, setSpeed] = useState<number>(60);
 
-    // "#FF0000" = RED, "#0000FF" = BLUE, "#00FF00" = GREEN
+    // "#FF0000" = RØDT ---- "#0000FF" ---- BLÅTT "#00FF00" ---- GRØNT
     const [color, setColor] = useState<string>("#FF0000");
 
 
@@ -64,6 +64,7 @@ const Radio: React.FC = () => {
                     </div>
                 </div>
             </div>
+            {/*Bruker RadioContext.Provider til å sende states for "speed" og "color" nedover i hierarkiet (til Canvas-komponentene)*/}
             <RadioContext.Provider value={{speed, color}}>
                 <div>
                     <Carousel>
