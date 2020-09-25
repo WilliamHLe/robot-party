@@ -1,27 +1,43 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./Radio.css";
-
 import Carousel from "../carousel/Carousel";
-import SlideOne from "../carousel/SlideOne";
-import SlideTwo from "../carousel/SlideTwo";
-import SlideThree from "../carousel/SlideThree";
-import SlideFour from "../carousel/SlideFour";
-import SlideFive from "../carousel/SlideFive";
+import Slide from "../carousel/Slide";
 import RadioContext from "../context/RadioContext";
 import Music from "../Music";
 
-// To radiokomponenter
-// En for hastighet (tall)
-// En for farger (RGB-verdier)
+import Canvas1 from "../canvas/Canvas1";
+import Canvas2 from "../canvas/Canvas2";
+import Canvas3 from "../canvas/Canvas3";
+import Canvas4 from "../canvas/Canvas4";
+import Canvas5 from "../canvas/Canvas5";
+
+import {getJsonSession, setJsonSession} from "../storage/JsonStorage";
+
+// To radioknapper
+// En for hastighet (lagres som tall)
+// En for farger (hex-verdier, lagres som streng)
 
 
 const Radio: React.FC = () => {
 
-    //60 = SLOW, 35 = NORMAL, 15 = FAST
-    const [speed, setSpeed] = useState<number>(60);
+    let selectedValues = getJsonSession("selectedValues") || "{}";
 
-    // "#FF0000" = RED, "#0000FF" = BLUE, "#00FF00" = GREEN
-    const [color, setColor] = useState<string>("#FF0000");
+    //60 = SAKTE ---- 35 = NORMAL ---- 15 = RASK
+    const [speed, setSpeed] = useState<number>( selectedValues.speedJson || 60);
+
+    // "#FF0000" = RØDT ---- "#0000FF" ---- BLÅTT "#00FF00" ---- GRØNT
+    const [color, setColor] = useState<string>(selectedValues.colorJson || "#FF0000");
+
+    useEffect( () => {
+        //Lagrer nåværende state i sessionstorage for å huske valgt innstilling hvis siden oppdateres
+        let selectedValues = {
+            speedJson: speed,
+            colorJson: color
+        }
+        setJsonSession("selectedValues", selectedValues)
+    }, [speed, color])
+    // MERK: bruk av useeffect fungerer, men i Safari vil ikke verdiene oppdatere seg før siden refreshes,
+    // i motsetning til andre browsere som oppdaterer kontinuerlig etter hver render, som gir mye mer mening?
 
 
     return(
@@ -65,19 +81,15 @@ const Radio: React.FC = () => {
                 </div>
                 <Music />
             </div>
+            {/*Bruker RadioContext.Provider til å sende states for "speed" og "color" nedover i hierarkiet (til Canvas-komponentene)*/}
             <RadioContext.Provider value={{speed, color}}>
                 <div>
                     <Carousel>
-                        {/* GAMMEL METODE MED PROPS, TAR VARE PÅ INNTIL VIDERE
-                        <SlideOne speedValue={speed} colorValue={color}/>
-                        <SlideTwo speedValue={speed} colorValue={color}/>
-                        <SlideThree speedValue={speed} colorValue={color}/>
-                        */}
-                        <SlideOne/>
-                        <SlideTwo/>
-                        <SlideThree/>
-                        <SlideFour/>
-                        <SlideFive/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;We%20should%20not%20mind%20so%20small%20a%20flower"} canvas = {<Canvas1/>}/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;Could%20Hope%20inspect%20her%20Basis"} canvas = {<Canvas2/>}/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;Success%20is%20counted%20sweetest"} canvas = {<Canvas3/>}/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;Nature%20can%20do%20no%20more"} canvas = {<Canvas4/>}/>
+                        <Slide url = {"https://poetrydb.org/author,title/Emily%20Dickinson;The%20Butterfly's%20Numidian%20Gown"} canvas = {<Canvas5/>}/>
                     </Carousel>
                 </div>
             </RadioContext.Provider>

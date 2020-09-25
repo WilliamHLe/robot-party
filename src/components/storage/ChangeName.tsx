@@ -1,21 +1,13 @@
-//UFERDIG OG IKKE TESTET ENDA
-
 import React, {useState} from "react"
-import {setJson} from "./jsonStorage";
+import {setJsonLocal} from "./JsonStorage";
 import "./ChangeName.css"
 
+//Komponent som kun vil vises dersom brukeren klikker på toggle-knappen "Endre navn"
+//Bruker localstorage til å lagre et nytt navn fra brukerinput
 const ChangeName = () => {
 
     const [name, setName] = useState("");
     const [saved, setSaved] = useState(false);
-
-    // The event type is a "ChangeEvent"
-    // We pass in "HTMLInputElement" to the input
-    /*
-    function onChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setName(e.target.value)
-    }
-     */
 
     function handleSubmit() {
         //JSON-lagring
@@ -23,7 +15,7 @@ const ChangeName = () => {
             name: name
         }
 
-        setJson("personalInfo", personalInfo)
+        setJsonLocal("personalInfo", personalInfo)
         setSaved(true);
 
     }
@@ -32,7 +24,8 @@ const ChangeName = () => {
     return (
         <div className={"formWrapper"}>
             <label id="nameInput" htmlFor="name" style={{marginBottom:"10px", marginTop:"5px"}}>Navn:
-                <br/><input id="name" type="text" name="Navn" placeholder={name} onChange={e => setName(e.target.value)}></input>
+                <br/>
+                <input id="name" type="text" name="Navn" placeholder={name} onChange={e => setName(e.target.value)}/>
             </label>
             <button type="submit" onClick={() => handleSubmit()}>
                 Lagre endringer

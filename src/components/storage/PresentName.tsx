@@ -1,12 +1,13 @@
 import React, {useState} from "react";
-import {getJson} from "./jsonStorage";
+import {getJsonLocal} from "./JsonStorage";
 import ChangeName from "./ChangeName";
 import "./PresentName.css";
 
-
+//Komponent som viser introduksjonen øverst på siden som sier enten "Hei!" eller "Hei, Navn!"
+//Henter et navn til introduksjonen dersom det fins i localstorage
 const PresentName = () => {
 
-    let personalInfo = getJson("personalInfo") || "{}";
+    let personalInfo = getJsonLocal("personalInfo") || "{}";
 
     const [visible, setVisible] = useState<boolean>(false);
     const [icon, setIcon] = useState<string>("+")
