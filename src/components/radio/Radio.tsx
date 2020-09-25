@@ -8,6 +8,7 @@ import SlideThree from "../carousel/SlideThree";
 import SlideFour from "../carousel/SlideFour";
 import SlideFive from "../carousel/SlideFive";
 import RadioContext from "../context/RadioContext";
+import Music from "../Music";
 
 // To radiokomponenter
 // En for hastighet (tall)
@@ -62,6 +63,7 @@ const Radio: React.FC = () => {
                         </label>
                     </div>
                 </div>
+                <Music />
             </div>
             <RadioContext.Provider value={{speed, color}}>
                 <div>

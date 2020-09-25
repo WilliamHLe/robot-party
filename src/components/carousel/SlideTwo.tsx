@@ -24,7 +24,6 @@ const SlideTwo = () => {
                 <DisplayPoetry url={url} />
             </div>
             <div className="grid-audio">
-                <Music />
             </div>
 
         </div>
