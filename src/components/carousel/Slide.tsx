@@ -1,7 +1,6 @@
 import React from "react";
 import DisplayPoetry from "../DisplayPoetry";
 import "../container.css"
-import Music from "../Music";
 
 
 interface SlideProps {
@@ -19,9 +18,6 @@ const Slide = ({url, canvas}: SlideProps) => {
             </div>
             <div className="grid-poetry">
                 <DisplayPoetry url={url} />
-            </div>
-            <div className="grid-audio">
-                <Music />
             </div>
 
         </div>
