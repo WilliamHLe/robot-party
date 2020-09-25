@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./Radio.css";
 import Carousel from "../carousel/Carousel";
 import Slide from "../carousel/Slide";
@@ -10,6 +10,8 @@ import Canvas3 from "../canvas/Canvas3";
 import Canvas4 from "../canvas/Canvas4";
 import Canvas5 from "../canvas/Canvas5";
 
+import {getJsonSession, setJsonSession} from "../storage/JsonStorage";
+
 // To radioknapper
 // En for hastighet (lagres som tall)
 // En for farger (hex-verdier, lagres som streng)
@@ -17,11 +19,24 @@ import Canvas5 from "../canvas/Canvas5";
 
 const Radio: React.FC = () => {
 
+    let selectedValues = getJsonSession("selectedValues") || "{}";
+
     //60 = SAKTE ---- 35 = NORMAL ---- 15 = RASK
-    const [speed, setSpeed] = useState<number>(60);
+    const [speed, setSpeed] = useState<number>( selectedValues.speedJson || 60);
 
     // "#FF0000" = RØDT ---- "#0000FF" ---- BLÅTT "#00FF00" ---- GRØNT
-    const [color, setColor] = useState<string>("#FF0000");
+    const [color, setColor] = useState<string>(selectedValues.colorJson || "#FF0000");
+
+    useEffect( () => {
+        //Lagrer nåværende state i sessionstorage for å huske valgt innstilling hvis siden oppdateres
+        let selectedValues = {
+            speedJson: speed,
+            colorJson: color
+        }
+        setJsonSession("selectedValues", selectedValues)
+    }, [speed, color])
+    // MERK: bruk av useeffect fungerer, men i Safari vil ikke verdiene oppdatere seg før siden refreshes,
+    // i motsetning til andre browsere som oppdaterer kontinuerlig etter hver render, som gir mye mer mening?
 
 
     return(

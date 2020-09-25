@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {setJson} from "./JsonStorage";
+import {setJsonLocal} from "./JsonStorage";
 import "./ChangeName.css"
 
 //Komponent som kun vil vises dersom brukeren klikker på toggle-knappen "Endre navn"
@@ -15,7 +15,7 @@ const ChangeName = () => {
             name: name
         }
 
-        setJson("personalInfo", personalInfo)
+        setJsonLocal("personalInfo", personalInfo)
         setSaved(true);
 
     }

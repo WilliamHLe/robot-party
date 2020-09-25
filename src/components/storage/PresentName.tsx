@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {getJson} from "./JsonStorage";
+import {getJsonLocal} from "./JsonStorage";
 import ChangeName from "./ChangeName";
 import "./PresentName.css";
 
@@ -7,7 +7,7 @@ import "./PresentName.css";
 //Henter et navn til introduksjonen dersom det fins i localstorage
 const PresentName = () => {
 
-    let personalInfo = getJson("personalInfo") || "{}";
+    let personalInfo = getJsonLocal("personalInfo") || "{}";
 
     const [visible, setVisible] = useState<boolean>(false);
     const [icon, setIcon] = useState<string>("+")
