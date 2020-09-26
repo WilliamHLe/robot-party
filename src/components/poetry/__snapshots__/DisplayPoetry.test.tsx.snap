@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when poem is fetched 1`] = `
+<h1>
+  Vennligst vent mens diktet hentes...
+</h1>
+`;
