@@ -20,7 +20,6 @@ const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
 
     let j = 1;
     let forward = true;
-    //let utstilling = "bop";
 
     let dance = [
         //Head

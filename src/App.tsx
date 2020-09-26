@@ -5,16 +5,19 @@ import Head from "./components/Head";
 import Radio from "./components/radio/Radio";
 import PresentName from "./components/storage/PresentName";
 
-function App() {
 
-    return (
-      <div>
-          <Head/>
-          <PresentName />
-          <Radio/>
-          <Footer />
-      </div>
-    )
+// Bruk av klasse-komponent
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <Head/>
+                <PresentName />
+                <Radio/>
+                <Footer />
+            </div>
+        )
+    }
 }
 
 export default App

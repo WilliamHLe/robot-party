@@ -41,6 +41,8 @@
     border-radius: 15px;
     padding: 5px;
     margin: 5px;
+    min-height: 610px;
+    align-content: center;
 }
 
 @media only screen and (max-width: 1365px) {

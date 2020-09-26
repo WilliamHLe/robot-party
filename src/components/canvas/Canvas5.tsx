@@ -9,7 +9,6 @@ const Canvas5 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
 
     let j = 1;
     let forward = true;
-    let utstilling = "bop";
     let disco = [
         //Head
         { x: 320, y: 175, w: 105, h: 125, rotate: 0 },

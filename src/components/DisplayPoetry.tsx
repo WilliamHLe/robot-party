@@ -1,26 +1,51 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import './DisplayPoetry.css';
 
-// Fetch data from poetry API
-const DisplayPoetry = (props: { url: string; }) => {
-    const url = props.url
-    const [contents, setContents] = useState([{ title: "", author: "", lines: [""] }]);
 
-    useEffect(() => {
-        fetch(url)
+
+type DState = {
+    title: string
+    author: string
+    lines: object
+}
+type DProps = {
+    url: string
+}
+
+// Henter dikt fra PoetryDB
+// Bruker en klasse-komponent
+class DisplayPoetry extends React.Component<DProps, DState> {
+    state = {title: "", author: "", lines: [""]}
+
+    componentDidMount() {
+        fetch(this.props.url)
             .then(response => response.json())
             .then((data) => {
-                setContents(data)
-            });
+                this.setState({title: data[0].title, author: data[0].author, lines: data[0].lines })
+                console.log(data)
 
-    }, [url]);
+            })
+        console.log(this.state.title)
+    }
 
-    return (
-        <div className="poetry-container">
-            <h3>{contents[0].title} av {contents[0].author}</h3>
-            <div>{contents[0].lines.map((line) => <p>{line}</p>)}</div>
-        </div>
-    );
+    renderContent() {
+        if (this.state.title !== "") {
+            return (
+                <div className="poetry-container">
+                    <h3>{this.state.title} av {this.state.author}</h3>
+                    <div>{this.state.lines.map((line) => <p>{line}</p>)}</div>
+                </div>
+            )
+        }
+
+        return <h1>Vennligst vent mens diktet hentes...</h1>;
+    }
+
+    render() {
+        return (
+            this.renderContent()
+        )
+    }
 }
 
 export default DisplayPoetry

@@ -9,7 +9,6 @@ const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
 
     let j = 1;
     let forward = true;
-    let utstilling = "bop";
     let robot = [
         //Head
         { x: 280, y: 155, w: 105, h: 125, rotate: -10 },

@@ -10,7 +10,6 @@ const Canvas3 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
 
     let j = 1;
     let forward = true;
-    //let utstilling = "bop";
 
     let circles: any = [
         {x:375,y:275,r:150,sA:0.75*Math.PI,eA:0.25*Math.PI,color:color},
