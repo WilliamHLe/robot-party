@@ -33,7 +33,7 @@ class DisplayPoetry extends React.Component<DProps, DState> {
             return (
                 <div className="poetry-container">
                     <h3>{this.state.title} av {this.state.author}</h3>
-                    <div>{this.state.lines.map((line) => <p>{line}</p>)}</div>
+                    <div className="poetry-text">{this.state.lines.map((line) => <p>{line}</p>)}</div>
                 </div>
             )
         }

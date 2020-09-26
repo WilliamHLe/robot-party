@@ -42,7 +42,7 @@ const Radio: React.FC = () => {
 
     return(
         <div>
-            <div className="radio-wrapper">
+            <div className="radio-container">
                 <div className="radio-element">
                     <h3>Velg hastighet:</h3>
                     <div>
@@ -79,7 +79,9 @@ const Radio: React.FC = () => {
                         </label>
                     </div>
                 </div>
-                <Music />
+                <div>
+                    <Music />
+                </div>
             </div>
             {/*Bruker RadioContext.Provider til å sende states for "speed" og "color" nedover i hierarkiet (til Canvas-komponentene)*/}
             <RadioContext.Provider value={{speed, color}}>
