@@ -3,7 +3,7 @@ import "./Radio.css";
 import Carousel from "../carousel/Carousel";
 import Slide from "../carousel/Slide";
 import RadioContext from "../context/RadioContext";
-import Music from "../Music";
+import Music from "../music/Music";
 
 import Canvas1 from "../canvas/Canvas1";
 import Canvas2 from "../canvas/Canvas2";

@@ -1,6 +1,6 @@
 import RadioContext from "../context/RadioContext";
 import React, {useRef, useEffect, useContext} from 'react'
-import "../container.css"
+import "../Container.css"
 
 const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 

@@ -28,6 +28,7 @@ class DisplayPoetry extends React.Component<DProps, DState> {
         console.log(this.state.title)
     }
 
+    // Melding mens man venter på at diktet hentes fra databasen
     renderContent() {
         if (this.state.title !== "") {
             return (

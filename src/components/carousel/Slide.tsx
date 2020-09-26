@@ -1,6 +1,6 @@
 import React from "react";
-import DisplayPoetry from "../DisplayPoetry";
-import "../container.css"
+import DisplayPoetry from "../poetry/DisplayPoetry";
+import "../Container.css"
 
 
 interface SlideProps {
