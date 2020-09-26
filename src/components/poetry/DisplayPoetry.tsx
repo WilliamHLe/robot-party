@@ -1,8 +1,6 @@
 import React from "react";
 import './DisplayPoetry.css';
 
-
-
 type DState = {
     title: string
     author: string
