@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when canvas and poem is passed as prop 1`] = `
+<div
+  className="grid-container"
+>
+  <div
+    className="grid-canvas"
+  >
+    <canvas
+      className="canvas"
+      height={800}
+      width={800}
+    />
+  </div>
+  <div
+    className="grid-poetry"
+  >
+    <h1>
+      Vennligst vent mens diktet hentes...
+    </h1>
+  </div>
+</div>
+`;

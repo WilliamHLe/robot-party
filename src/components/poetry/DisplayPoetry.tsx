@@ -20,8 +20,6 @@ class DisplayPoetry extends React.Component<DProps, DState> {
             .then(response => response.json())
             .then((data) => {
                 this.setState({title: data[0].title, author: data[0].author, lines: data[0].lines })
-                console.log(data)
-
             })
         console.log(this.state.title)
     }

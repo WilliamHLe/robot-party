@@ -2,16 +2,6 @@ import "../Container.css"
 import React, {useRef, useEffect, useContext} from 'react'
 import RadioContext from "../context/RadioContext";
 
-// GAMMEL METODE MED PROPS //
-/*
-interface CanvasProps {
-    speedValue: number;
-    colorValue: string;
-}
-*/
-
-//const Canvas1 = ({speedValue, colorValue}: CanvasProps, props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
-/////////////////////////////
 
 const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanvasElement> & React.CanvasHTMLAttributes<HTMLCanvasElement>) => {
 
@@ -60,7 +50,6 @@ const Canvas1 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
         gradient.addColorStop(1, "white");
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, 800, 800);
-        //ctx.globalAlpha = 0.5;
     }
 
     const drawDancer = (arr:any, ctx:any) => {
