@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="formWrapper"
+>
+  <label
+    htmlFor="name"
+    id="nameInput"
+    style={
+      Object {
+        "marginBottom": "10px",
+        "marginTop": "5px",
+      }
+    }
+  >
+    Navn:
+    <br />
+    <input
+      id="name"
+      name="Navn"
+      onChange={[Function]}
+      placeholder=""
+      type="text"
+    />
+  </label>
+  <button
+    onClick={[Function]}
+    type="submit"
+  >
+    Lagre endringer
+  </button>
+</div>
+`;
