@@ -26,20 +26,9 @@ exports[`renders correctly with two children that takes url and canvas as props 
           <div
             className="grid-poetry"
           >
-            <div
-              className="poetry-container"
-            >
-              <h3>
-                
-                 av 
-                
-              </h3>
-              <div>
-                <p>
-                  
-                </p>
-              </div>
-            </div>
+            <h1>
+              Vennligst vent mens diktet hentes...
+            </h1>
           </div>
         </div>
       </div>
@@ -61,20 +50,9 @@ exports[`renders correctly with two children that takes url and canvas as props 
           <div
             className="grid-poetry"
           >
-            <div
-              className="poetry-container"
-            >
-              <h3>
-                
-                 av 
-                
-              </h3>
-              <div>
-                <p>
-                  
-                </p>
-              </div>
-            </div>
+            <h1>
+              Vennligst vent mens diktet hentes...
+            </h1>
           </div>
         </div>
       </div>
