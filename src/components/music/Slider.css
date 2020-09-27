@@ -33,19 +33,39 @@ span {
     font-family: "Symbol", serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 10px;
 }
 span.lowVolume::before {
-    content: "\1F508\FE0E";
+    content: ' ';
+    display: inline-block;
+    background: url("symbols/1F508.png");
+    background-size: contain;
+    height: 20px;
+    width: 20px;
 }
 span.maxVolume::before {
-    content: "\1F50A\FE0E";
+    content: ' ';
+    display: inline-block;
+    background: url("symbols/1F50A.png");
+    background-size: contain;
+    height: 20px;
+    width: 20px;
 }
 
 .play::before {
-    content:  "\23F8\FE0E";
+    content: ' ';
+    display: inline-block;
+    background:  url("symbols/23F8.png");
+    background-size: contain;
+    height: 20px;
+    width: 20px;
 }
 
 .pause::before {
-    content: "\23F5\FE0E";
+    content: ' ';
+    display: inline-block;
+    background: url("symbols/23F5.png");
+    background-size: contain;
+    height: 20px;
+    width: 20px;
 }
