@@ -29,12 +29,6 @@
     cursor: pointer;
 }
 
-span {
-    font-family: "Symbol", serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 10px;
-}
 span.lowVolume::before {
     content: ' ';
     display: inline-block;
