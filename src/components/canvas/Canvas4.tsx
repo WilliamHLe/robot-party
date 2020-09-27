@@ -57,7 +57,7 @@ const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
             ctx.save();
             ctx.beginPath();
             ctx.fillStyle = color;
-            if (r.w == 0) {
+            if (r.w === 0) {
                 ctx.arc(r.x, r.y, 55, 0, 2 * Math.PI);
             } else if (typeof r.x1 !== "undefined") {
                 ctx.beginPath();
@@ -67,7 +67,7 @@ const Canvas4 = (props: JSX.IntrinsicAttributes & React.ClassAttributes<HTMLCanv
                 ctx.closePath();
                 ctx.stroke();
                 ctx.fill();
-            } else if (r.name == "arm") {
+            } else if (r.name === "arm") {
                 ctx.translate(r.x, r.y);
                 ctx.rotate((r.rotate * Math.PI) / 180);
                 ctx.rect(-r.w,-r.h/2,r.w,r.h);
