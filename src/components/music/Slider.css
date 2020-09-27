@@ -1,3 +1,4 @@
+/* Kode for slider funnet her: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 .slider {
     -webkit-appearance: none;
     width: 200px;
@@ -29,7 +30,7 @@
 }
 
 span {
-    font-family: "Segoe UI Symbol";
+    font-family: "Symbol", serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
