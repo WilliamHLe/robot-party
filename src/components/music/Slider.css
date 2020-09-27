@@ -43,9 +43,9 @@ span.maxVolume::before {
 }
 
 .play::before {
-    content:  "\23F8\FE0E";
+    content:  "\23F8";
 }
 
 .pause::before {
-    content: "\23F5\FE0E";
+    content: "\25B6 ";
 }
