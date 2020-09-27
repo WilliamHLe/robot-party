@@ -4,43 +4,54 @@ import "../radio/Radio.css";
 
 const Music : React.FC = () => {
 
-    const Music1 = require("./media/bensoundmoose.mp3");
-    const Music2 = require("./media/ColourOfYourFaceNoMBe.mp3");
-    const Music3 = require("./media/RobotsaComethDanLebowitz.mp3");
+    //Musikk som er brukt
+    //Kilder:
+    //Moose: https://www.bensound.com/royalty-free-music/track/moose
+    //Colour of your face: NoMBe
+    //Robots a Cometh: Dan Lebowitz
+    const Music1 = require("./music/bensoundmoose.mp3");
+    const Music2 = require("./music/ColourOfYourFaceNoMBe.mp3");
+    const Music3 = require("./music/RobotsaComethDanLebowitz.mp3");
 
     const [music, setMusic] = useState<string>(Music1);
 
+    //Funksjon endrer volumet til musikken
     const setVolume = () => {
         const musicPlayer:any = document.getElementById("musicPlayer");
         const volumeSlider:any = document.getElementById("volumeSlider");
         musicPlayer.volume = volumeSlider.value/100;
-        if(musicPlayer.paused) {
-            musicPlayer.play();
-        }
     }
 
+    //Funksjon som endrer musikken
+    //Nødvendig siden audio-taggen må bruke load() for å laste inn ny musikk,
+    //og kan derfor ikke bare bruke setMusic()
     const changeMusic = (newMusic:any) => {
         const musicPlayer:any = document.getElementById("musicPlayer");
         setMusic(newMusic);
-        console.log(newMusic);
-        console.log(music);
         musicPlayer.load();
         musicPlayer.play();
+        changePButton();
     }
 
+    //Funksjon endrer utseende til pause-knappen basert på musikkens tilstand
+    const changePButton =() => {
+        const musicPlayer:any = document.getElementById("musicPlayer");
+        const pauseButton:any = document.getElementById("pButton");
+        if(musicPlayer.paused) {
+            pauseButton.className = "";
+            pauseButton.className = "pause";
+        } else {
+            pauseButton.className = "";
+            pauseButton.className = "play";
+        }
+    }
+
+    //Funksjon for å stoppe eller starte musikken
     const pauseMusic = () => {
         const musicPlayer:any = document.getElementById("musicPlayer");
         const pauseButton:any = document.getElementById("pButton");
-        console.log(musicPlayer.paused);
-        if(musicPlayer.paused) {
-            pauseButton.className = "";
-            pauseButton.className = "play";
-            musicPlayer.play();
-        } else {
-            pauseButton.className = "";
-            pauseButton.className = "pause";
-            musicPlayer.pause();
-        }
+        (musicPlayer.paused) ? musicPlayer.play() : musicPlayer.pause();
+        changePButton();
     }
 
     return (
@@ -60,7 +71,12 @@ const Music : React.FC = () => {
                 <audio id="musicPlayer" onLoad={() => setVolume()} autoPlay>
                     <source src={music} type="audio/mpeg"/>
                 </audio>
-                <span id="pButton" className="pause" onClick={pauseMusic}> </span><span className="lowVolume"> </span><input id="volumeSlider" type="range" min="0" max="100" defaultValue="50" className="slider" onChange={() => setVolume()}/><span className="maxVolume"> </span>
+                {/* Musicspiller */}
+                <span id="pButton" className="pause" onLoad={changePButton} onClick={pauseMusic}> </span>
+                <span className="lowVolume"> </span>
+                {/* Range-input for endring av volum */}
+                <input id="volumeSlider" type="range" min="0" max="100" defaultValue="50" className="slider" onChange={() => setVolume()}/>
+                <span className="maxVolume"> </span>
             </div>
         </div>
     )
