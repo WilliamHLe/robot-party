@@ -9,9 +9,9 @@ const Music : React.FC = () => {
     //Moose: https://www.bensound.com/royalty-free-music/track/moose
     //Colour of your face: NoMBe
     //Robots a Cometh: Dan Lebowitz
-    const Music1 = require("./music/bensoundmoose.mp3");
-    const Music2 = require("./music/ColourOfYourFaceNoMBe.mp3");
-    const Music3 = require("./music/RobotsaComethDanLebowitz.mp3");
+    const Music1 = require("./media/bensoundmoose.mp3");
+    const Music2 = require("./media/ColourOfYourFaceNoMBe.mp3");
+    const Music3 = require("./media/RobotsaComethDanLebowitz.mp3");
 
     const [music, setMusic] = useState<string>(Music1);
 
