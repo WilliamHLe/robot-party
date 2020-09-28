@@ -84,10 +84,11 @@ Dette gir muligheten til å bruke CSS properties som `vh` og `vw`.
 
 Vi har implementert snapshot-testing i Jest for alle komponenter som returnerer noe, med unntak av `Head.tsx` og `Footer.tsx`. Vi har til sammen 8 av disse testene.
 
-
 Vi har testet selve applikasjonen i nettleserene _Google Chrome_ (v. 85.0), _Opera_ (v. 71.0), _Safari_ (v. 14.0), _Firefox_ (v.81.0), _Edge_ (v. 85.0)
 
-For å teste brukergrensesnittet og responsiv design så har vi brukt utviklerverktøyet i _Google Chrome_ og _Firefox_. Det gir oss muligheten til å visualisere nettsiden på ulike enheter med mindre skjermer, blant annet en mobil enhet (iPhone X) med vertikal og horisontal orientering.
+For å teste brukergrensesnittet og responsiv design så har vi brukt utviklerverktøyet i _Google Chrome_ og _Firefox_. Det gir oss muligheten til å visualisere nettsiden på ulike enheter med mindre skjermer, blant annet mobile enheter, med vertikal og horisontal orientering.
+
+Vi har testet på 3 ulike enheter: Macbook Pro, Acer Aspire 5 og iPhone 11 (vertikal+horisontal). 
 
 
 ## Git/GitLab
