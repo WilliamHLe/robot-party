@@ -41,13 +41,13 @@ Det var også krav om å bruke props, state og Context API'et. Props og State bl
 
 ### Slideshow-komponent
 
-Komponenten `Carousel.tsx` lager selve slideshowet, og gjør det mulig å bla fram og tilbake mellom de ulike utstillingene. `Carousel.tsx` tar inn en liste med React-komponenter som barn (må ha minst to for å gjøre det mulig å bytte mellom dem), slik at hver slide er en egen komponent, der kun en er synlig om gangen. Dette gjør det enklere å modifisere innhold i slidene. Hver slide-komponent består av en animasjon i Canvas og et dikt. `Carousel.tsx` basert på [denne tutorialen fra medium.com](https://medium.com/octopus-wealth/creating-a-carousel-in-react-e45918738212), der koden er forenklet og tilpasset til våre behov.
+Komponenten `Carousel.tsx` lager selve slideshowet, og gjør det mulig å bla fram og tilbake mellom de ulike utstillingene. `Carousel.tsx` tar inn en liste med React-komponenter som barn (må ha minst to for å gjøre det mulig å bytte mellom dem), slik at hver slide er en egen komponent, der kun en er synlig om gangen. Dette gjør det enklere å modifisere innhold i slidene. Hver slide-komponent består av en animasjon i Canvas og et dikt. `Carousel.tsx` er basert på [denne tutorialen fra medium.com](https://medium.com/octopus-wealth/creating-a-carousel-in-react-e45918738212), der koden er forenklet og tilpasset til våre behov.
 
 ### Animasjon
 Vi har valgt å lage animasjonene i HTML Canvas. Hver enkel animasjon ligger i sin egen fil og blir vist gjennom en felles komponent som heter `Slide.tsx`
 
 ### Ajax
-Diktene hentes fra PoetryDB ved bruk av JavaScript sin innebygde Fetch APIet. Vi bruker fetch for å hente diktet i JSON-format før den blir konvertert og lagret i state for videre bruk.
+Diktene hentes fra PoetryDB ved bruk av JavaScript sitt innebygde Fetch API. Vi bruker fetch for å hente diktet i JSON-format før den blir konvertert og lagret i state for videre bruk.
 
 ### Musikk
 Audio-taggen i HTML5 brukes for å håndtere musikken. Kilden til musikken styres av en variabel som endres når man trykker på radio-knappene. Controls-attributtet har blitt deaktivert og vi har laget egne funksjoner for stoppe/starte musikken og endring av volum. Dette ble gjort for å hindre at man skal kunne søke i musikken, men fremdeles kunne få kontroll over musikken. Det gjør også at vi kan tilpasse designet til siden.
@@ -85,14 +85,14 @@ Dette gir muligheten til å bruke CSS properties som `vh` og `vw`.
 Vi har implementert snapshot-testing i Jest for alle komponenter som returnerer noe, med unntak av `Head.tsx` og `Footer.tsx`. Vi har til sammen 8 av disse testene.
 
 
-Vi har testet selve applikasjonen i nettleserene _Google Chrome_ (v. 85.0), _Opera_ (v. 71.0), _Safari_ (v. 14.0) og _Firefox_ (v.81.0).
+Vi har testet selve applikasjonen i nettleserene _Google Chrome_ (v. 85.0), _Opera_ (v. 71.0), _Safari_ (v. 14.0), _Firefox_ (v.81.0), _Edge_ (v. 85.0)
 
-For å teste brukergrensesnittet og responsiv design så har vi brukt utviklerverktøyet i _Google Chrome_ og _Firefox_. Det gir oss muligheten til å visualisere nettsiden på ulike enheter.
+For å teste brukergrensesnittet og responsiv design så har vi brukt utviklerverktøyet i _Google Chrome_ og _Firefox_. Det gir oss muligheten til å visualisere nettsiden på ulike enheter med mindre skjermer, blant annet en mobil enhet (iPhone X) med vertikal og horisontal orientering.
 
 
 ## Git/GitLab
 
-For versjonshåndtering og samarbeidsplatform så har vi brukt Git og GitLab. Oppgaver har blitt delt opp og lagt under issues på GitLab. Commits markeres med `#issue-nummer` etter som de løses. Vi følger [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html) for håndtering av branch etter beste praksis.
+For versjonshåndtering og samarbeidsplatform så har vi brukt Git og GitLab. Oppgaver har blitt delt opp og lagt under issues på GitLab. Commits markeres med `#issue-nummer` etterhvert som de løses. Vi følger [GitLab Flow](https://docs.gitlab.com/ee/topics/gitlab_flow.html) for håndtering av branch etter beste praksis.
 
 Vi navngir komponenter og variabler på engelsk. Navngiving følger case stylen PascalCase. Vi har kommentert på norsk der det er fornuftig.
 
