@@ -55,6 +55,7 @@
         background-color: #a1a1a1;
         margin: 0 0 20px;
         border-radius: 15px;
+        max-height: 100%;
     }
 
 
