@@ -1,4 +1,4 @@
-# Robot Dance - IT2810 Prosjekt 2
+# Robot Party - IT2810 Prosjekt 2
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.idi.ntnu.no/#https://gitlab.stud.idi.ntnu.no/it2810-h20/team-13/it2810-prosjekt-2) 
 
 ## Introduksjon
